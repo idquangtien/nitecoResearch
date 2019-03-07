@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+    <div class="tab" id="tab">
+        <div class="tab__control">
+            <a class="tab__link" dataTab="tab__content1">tab 1</a>
+            <a class="tab__link" dataTab="tab__content2">tab 2</a>
+            <a class="tab__link" dataTab="tab__content3">tab 3</a>
+        </div>
+        <div class="tab__container">
+            <div class="tab__content" id="tab__content1">Content tab 1</div>
+            <div class="tab__content" id="tab__content2">Content tab 2</div>
+            <div class="tab__content" id="tab__content3">Content tab 3</div>
+        </div>
+    </div>
+
+    <div class="tab" id="tabH">
+        <div class="tab__control">
+            <a class="tab__link" dataTab="tab__content1">tab 1</a>
+            <a class="tab__link" dataTab="tab__content2">tab 2</a>
+            <a class="tab__link" dataTab="tab__content3">tab 3</a>
+        </div>
+        <div class="tab__container">
+            <div class="tab__content" id="tab__content1">Content tab 1</div>
+            <div class="tab__content" id="tab__content2">Content tab 2</div>
+            <div class="tab__content" id="tab__content3">Content tab 3</div>
+        </div>
+    </div>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        class ComponentTab {
+            constructor(props){
+                this.tabID = props.tabID;
+                this.tabLink = props.tabLink ? props.tabLink : "tab__link";
+                this.tabContent = props.tabContent ? props.tabContent : "tab__content";
+                this.dataTab = props.dataTab ? props.dataTab : "dataTab";
+                this.tabClassNameActive = props.tabClassNameActive ? props.tabClassNameActive : "active";
+            }
+            init(){
+                var self = this;
+
+                var tabLinks = this.tabID.find("." + this.tabLink);
+                var tabContents = this.tabID.find("." + this.tabContent);
+
+                tabLinks.first().addClass(self.tabClassNameActive);
+                tabContents.first().addClass(self.tabClassNameActive);
+
+                tabLinks.click(function(){
+                    $(this).siblings().removeClass(self.tabClassNameActive);
+                    $(this).addClass(self.tabClassNameActive);
+
+                    var active = $(this).attr(self.dataTab);
+
+                    tabContents.each((index,item)=>{
+                        $(item).removeClass(self.tabClassNameActive);
+                        if($(item).attr("id") == active) {
+                            $(item).addClass(self.tabClassNameActive);
+                        }
+                    });
+                });
+            }
+        }
+        $(document).ready(function(){
+            var Tab = new ComponentTab({
+                tabID: $('#tab')
+            });
+            Tab.init();
+
+            var TabH = new ComponentTab({
+                tabID: $('#tabH')
+            });
+            TabH.init();
+        });
+    </script>
+</body>
+</html>
