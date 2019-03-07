@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+    <div class="carousel-container">
+        <ul class="carousel">
+            <li><a><div>1</div></a></li>          
+            <li><a><div>2</div></a></li>          
+            <li><a><div>3</div></a></li>          
+            <li><a><div>4</div></a></li>          
+            <li><a><div>5</div></a></li>          
+            <li><a><div>6</div></a></li>          
+            <li><a><div>7</div></a></li>          
+            <li><a><div>8</div></a></li>          
+        </ul>
+    </div>
+    
+    <button class="btn-prev">Prev</button>
+    <button class="btn-next">Next</button>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        class ComponentCarousel {
+            constructor(props){
+                this.container = props.container;
+                this.buttonNext = props.buttonNext;
+                this.buttonPrev = props.buttonPrev;
+                this.space = props.space ? props.space : '20';
+            }
+            init(){
+                let self = this;
+                
+                let totalItem = 8;
+                let windowWidth = $(window).width();
+                let showItem = 4;
+
+                let itemWidth = windowWidth / showItem;
+                
+
+                let container = itemWidth * totalItem;
+
+
+
+                this.container.width(container);
+                this.container.find('li').css('flex-basis', itemWidth + 'px');
+
+                
+                
+
+                this.buttonNext.click(function(){
+                    let first = self.container.find('li').first();
+                    first.animate({
+                        'flex-basis': 0,
+                    }, function(){
+                        first.appendTo(self.container).css({
+                            'flex-basis': itemWidth
+                        })
+                    });
+                });
+                this.buttonPrev.click(function(){
+                    let last = self.container.find('li').last().css({
+                        'flex-basis': 0,
+                    });
+                    last.prependTo(self.container);
+                    last.animate({'flex-basis': itemWidth});
+                });
+            }
+        }
+        $(document).ready(function(){
+            let carousel = new ComponentCarousel({
+                container: $('ul'),
+                buttonNext: $('.btn-next'),
+                buttonPrev: $('.btn-prev')
+            });
+            carousel.init();
+        });
+    </script>
+</body>
+</html>

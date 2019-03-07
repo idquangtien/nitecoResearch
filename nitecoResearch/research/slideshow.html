@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+    
+
+    
+    <div class="slideshow" id="slideshow">
+        <div class="slideshow__container">
+            <div class="slide">
+                <div class="slide__image">
+                    <img src="assets/images/slideshow/001.jfif"/>
+                </div>
+                <div class="slide__container">
+                    <div class="slide__content">
+                        <div class="title">slide content 1</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, placeat!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide__image">
+                    <img src="assets/images/slideshow/002.jpeg"/>
+                </div>
+                <div class="slide__container">
+                    <div class="slide__content">
+                        <div class="title">slide content 2</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, placeat!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide__image">
+                    <img src="assets/images/slideshow/003.jfif"/>
+                </div>
+                <div class="slide__container">
+                    <div class="slide__content">
+                        <div class="title">slide content 3</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, placeat!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide__image">
+                    <img src="assets/images/slideshow/004.jpeg"/>
+                </div>
+                <div class="slide__container">
+                    <div class="slide__content">
+                        <div class="title">slide content 4</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, placeat!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide__image">
+                    <img src="assets/images/slideshow/005.jpg"/>
+                </div>
+                <div class="slide__container">
+                    <div class="slide__content">
+                        <div class="title">slide content 5</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, placeat!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slideshow__control">
+            <a class="btn-prev">Prev</a>
+            <a class="btn-next">Next</a>
+        </div>
+    </div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        class ComponentSlideshow {
+            constructor(props){
+               this.container = props.container;
+               this.buttonNext = props.buttonNext;
+               this.buttonPrev = props.buttonPrev;
+               this.timePause = props.timePause ? props.timePause : 2000;
+            }
+            setWidth(){
+                let totalWidth = 0;
+                this.container.find(".slide").each(function(){
+                    totalWidth += $(this).outerWidth();
+                });
+
+                console.log('totalWidth',totalWidth);
+                this.container.width(totalWidth);
+            }
+            moveSlide(slideActive) {
+                let containerOffset = this.container.offset().left;
+                let slideActiveOffset = slideActive.offset().left;
+                let totalOffset = slideActiveOffset - containerOffset;
+
+                this.container.css({
+                    "transform": "translate(-" + totalOffset + "px)",
+                });
+            }
+            nextSlide(currentSlide){
+                if(currentSlide < this.container.find(".slide").length - 1) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0;
+                }
+                return currentSlide;
+            }
+            prevSlide(currentSlide){
+                if(currentSlide > 0) {
+                    currentSlide--;
+                } else {
+                    currentSlide = this.container.find(".slide").length - 1;
+                }
+                return currentSlide;
+            }
+            clickButton(currentSlide){
+                let slides = this.container.find(".slide");
+                this.moveSlide($(slides[currentSlide]));
+
+                slides.siblings().removeClass("active");
+                $(slides[currentSlide]).addClass("active");
+            }
+            init(){
+                let self = this;
+                let currentSlide = 0;
+                this.setWidth();
+
+                this.buttonNext.click(function(){
+                    currentSlide = self.nextSlide(currentSlide);
+                    self.clickButton(currentSlide);
+                });
+                this.buttonPrev.click(function(){
+                    currentSlide = self.prevSlide(currentSlide);
+                    self.clickButton(currentSlide);
+                });
+                let interval = function(){
+                    currentSlide = self.nextSlide(currentSlide);
+                    self.clickButton(currentSlide);
+                }
+                let refreshIntervalId = setInterval(interval, this.timePause);
+            }
+        }
+        $(document).ready(function(){
+            let slideshow = new ComponentSlideshow({
+                container: $("#slideshow .slideshow__container"),
+                buttonNext: $(".btn-next"),
+                buttonPrev: $(".btn-prev"),
+            });
+            slideshow.init();
+        });
+    </script>
+</body>
+</html>

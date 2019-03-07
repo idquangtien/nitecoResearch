@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+    <button>open modal</button>
+    <div class="btn-group">
+        <i class="icon">A</i>
+        <a class="btn">open modal</a>
+    </div>
+    <div class="modal">
+        <div class="modal__container">
+            <div class="modal__dimmer"></div>
+            <div class="modal__content">
+                <div class="modal__header">
+                    <div class="title">modal header</div>
+                    <div class="close">X</div>
+                </div>
+                <div class="modal__body"></div>
+                <div class="modal__footer"></div>
+            </div>
+        </div>
+        verticalsites+ecommerce@weebly.com
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('.modal').addClass('active');
+            });
+            $('.close').click(function(){
+                $('.modal').removeClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
