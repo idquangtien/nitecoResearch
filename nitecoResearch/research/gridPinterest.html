@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Pinterest</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+    <div class="gridPinterest">
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/1.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/001.jfif"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/3.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/002.jpeg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/5.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/003.jfif"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/1.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/004.jpeg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/3.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/2.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/004.jpeg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/2.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/003.jfif"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/004.jpeg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/2.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/001.jfif"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/5.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/005.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/1.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/3.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/4.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/5.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/6.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/5.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/6.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/4.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/3.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/2.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/carousel/1.jpg"/></div></div>
+        <div class="gridItem"><div class="gridItem__content"><img src="assets/images/slideshow/005.jpg"/></div></div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        class ComponentGridPinteres {
+            constructor(props){
+               this.grid = props.grid;
+            }
+            resizeGridItem(item) {
+                let rowHeight = parseInt(this.grid.css('grid-auto-rows'));
+
+                let rowGap = parseInt(this.grid.css('grid-row-gap'));
+               
+                let rowSpan = Math.ceil( (item.find(".gridItem__content").outerHeight() + rowGap) / (rowHeight + rowGap) );
+
+                $(item).css("grid-row-end","span " + rowSpan);
+            }
+            resizeAllGridItems(){
+                let items = $(".gridItem");
+                items.each((index, item)=>{
+                    this.resizeGridItem($(item));
+                })
+            }
+            fullImageGridItems(){
+                let items = $(".gridItem");
+                items.each((index, item)=>{
+                    $(item).find("img").addClass("full");
+                })
+            }
+            init(){
+                let self = this;
+                let make_promise = function(task = function(){}){
+                    return new Promise(function(resolve, reject){
+                        task();
+                        resolve();
+                    });
+                }
+                make_promise(self.resizeAllGridItems())
+                    .then(function(){
+                        self.fullImageGridItems();
+                    });
+            }
+        }
+        
+        $(document).ready(function(){
+            
+        });
+
+        let grid = new ComponentGridPinteres({
+            grid: $(".gridPinterest")
+        });
+        $(window).on("load", function() {
+            grid.init();
+        });
+        $(window).resize(function(){
+            grid.init();
+        });
+    </script>
+</body>
+</html>

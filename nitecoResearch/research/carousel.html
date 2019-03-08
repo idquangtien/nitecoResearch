@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body>
-    <div class="carousel-container">
-        <ul class="carousel">
-            <li><a><div>1</div></a></li>          
-            <li><a><div>2</div></a></li>          
-            <li><a><div>3</div></a></li>          
-            <li><a><div>4</div></a></li>          
-            <li><a><div>5</div></a></li>          
-            <li><a><div>6</div></a></li>          
-            <li><a><div>7</div></a></li>          
-            <li><a><div>8</div></a></li>          
+    <div class="carousel">
+        <ul class="carousel__container">
+            <li><a><div><img src="assets/images/carousel/1.jpg"/></div></a></li>          
+            <li><a><div><img src="assets/images/carousel/2.jpg"/></div></a></li>          
+            <li><a><div><img src="assets/images/carousel/3.jpg"/></div></a></li>          
+            <li><a><div><img src="assets/images/carousel/4.jpg"/></div></a></li>          
+            <li><a><div><img src="assets/images/carousel/5.jpg"/></div></a></li>          
+            <li><a><div><img src="assets/images/carousel/6.jpg"/></div></a></li>                 
         </ul>
+        <div class="carousel__control">
+            <button class="btn-prev">Prev</button>
+            <button class="btn-next">Next</button>
+        </div>
     </div>
     
-    <button class="btn-prev">Prev</button>
-    <button class="btn-next">Next</button>
+    
     <script src="assets/js/jquery.min.js"></script>
     <script>
         class ComponentCarousel {
@@ -30,16 +31,15 @@
                 this.container = props.container;
                 this.buttonNext = props.buttonNext;
                 this.buttonPrev = props.buttonPrev;
+                this.itemShow = props.itemShow ? props.itemShow : 5;
                 this.space = props.space ? props.space : '20';
             }
             init(){
                 let self = this;
-                
-                let totalItem = 8;
                 let windowWidth = $(window).width();
-                let showItem = 4;
-
-                let itemWidth = windowWidth / showItem;
+                
+                let totalItem = this.container.find('li').length;
+                let itemWidth = windowWidth / this.itemShow;
                 
 
                 let container = itemWidth * totalItem;
@@ -73,7 +73,7 @@
         }
         $(document).ready(function(){
             let carousel = new ComponentCarousel({
-                container: $('ul'),
+                container: $('.carousel .carousel__container'),
                 buttonNext: $('.btn-next'),
                 buttonPrev: $('.btn-prev')
             });

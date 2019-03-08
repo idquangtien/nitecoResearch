@@ -1,7 +1,93 @@
-* {
-    margin: 0;
-    padding: 0;
+html {
+    box-sizing: border-box;
 }
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+$xs: 599px; 
+$sm: 600px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$breakpoints: (
+	'xs': 599px,
+	'sm': 600px,
+	'md': 768px,
+	'lg': 992px,
+	'xl': 1200px
+);
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .example {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {background: orange;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .example {background: pink;}
+}
+
+
+
+@mixin media-min-width($value) {
+	@media only screen and (min-width: $value) {
+		@content;
+	}
+}
+@mixin media-max-width($value) {
+	@media only screen and (max-width: $value) {
+		@content;
+	}
+}
+
+.grid {
+	display: grid;
+	@each $key, $value in $breakpoints {
+		@if $key == 'xs' {
+			@include media-max-width($value) {
+				@for $i from 1 through 12 {
+					&.grid-#{$key}-#{$i} {
+						grid-template-columns: repeat($i, 1fr);
+					}
+					&.grid-gap-#{$key}-#{$i*5} {
+						grid-gap: $i * 5;
+					}
+				}
+			}
+		} @else {
+			@include media-min-width($value) {
+				@for $i from 1 through 12 {
+					&.grid-#{$key}-#{$i} {
+						grid-template-columns: repeat($i, 1fr);
+					}
+					&.grid-gap-#{$key}-#{$i*5} {
+						grid-gap: $i * 5;
+					}
+                }
+			}
+		}
+	}
+}
+
+
 .btn {
     display: inline-block;
     
@@ -162,30 +248,136 @@
 }
 
 
-.carousel-container {
+.carousel {
     overflow: hidden;
 }
-    ul.carousel {
-        list-style-type: none;
-        display: flex;
-        overflow: hidden;
-        li {
-            // min-width: 25vw;
-            a {
-                
+.carousel__container {
+    list-style-type: none;
+    display: flex;
+    overflow: hidden;
+    li {
+        // min-width: 25vw;
+        a { 
+            display: block;
+            background-color: #eee;
+            width: 100%;
+            height: 100%;
+            img {
                 display: block;
-                background-color: #eee;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
-        }
-        li:nth-child(even) {
-            a {
-                background-color: #ddd;
-            }
-        }
-        li:last-child {
-            a {
-                margin-right: 0;
-            }
-            
         }
     }
+    li:nth-child(even) {
+        a {
+            background-color: #ddd;
+        }
+    }
+    li:last-child {
+        a {
+            margin-right: 0;
+        }
+        
+    }
+}
+.carousel__control {
+    .btn-next, .btn-prev {
+        border: none;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 11px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+
+.gridPinterest {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    grid-auto-rows: 100px;
+    grid-gap: 20px;
+    .gridItem {
+        // background-color: #efefef;
+        box-shadow: inset 0 0 0 1px #eee;
+        position: relative;
+        border-radius: 5px;
+        transition: .5;
+        .gridItem__content {
+            display: block;
+            padding: 10px;
+            img {
+               
+                width: 100%;
+                display: block;
+                // vertical-align: middle;
+                border-radius: 5px;
+                &.full {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    // margin: 10px;
+                    width: calc(100% - 20px);
+                    height: calc(100% - 20px);
+                    object-fit: cover;
+                }
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 2px 10px #ccc;
+        }
+        
+    }
+}
+
+.truncateText {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    -moz-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar {
+    color: black;
+    width: 200px;
+    height: 100px;
+    border: 1px solid;
+    position: relative;
+    overflow: auto;
+}
+.dimmer {
+    z-index: 1000;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: block;
+    background-color: rgba(black,.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    .dimmer__content {
+        position: sticky;
+        top: 0; bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: rgba(red,0.1);
+    }
+}
