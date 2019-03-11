@@ -1,0 +1,15 @@
+.btn {
+    display: inline-block;
+    
+    background-color: silver;
+}
+.btn-group {
+    display: inline-flex;
+    .icon {
+        background-color: rgba(black,.1);
+        padding: 0 10px;
+    }
+    .btn {
+        padding: 0 10px;
+    }
+}

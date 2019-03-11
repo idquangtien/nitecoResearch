@@ -1,0 +1,4 @@
+/* Medium devices (landscape tablets, 768px and up) */
+@include media-min-width($md) {
+  .example {background: blue;}
+} 
