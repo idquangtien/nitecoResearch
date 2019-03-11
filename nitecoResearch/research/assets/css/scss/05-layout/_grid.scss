@@ -1,0 +1,29 @@
+
+.grid {
+	display: grid;
+	@each $key, $value in $breakpoints {
+		@if $key == 'xs' {
+			@include media-max-width($value) {
+				@for $i from 1 through 12 {
+					&.grid-#{$key}-#{$i} {
+						grid-template-columns: repeat($i, 1fr);
+					}
+					&.grid-gap-#{$key}-#{$i*5} {
+						grid-gap: $i * 5;
+					}
+				}
+			}
+		} @else {
+			@include media-min-width($value) {
+				@for $i from 1 through 12 {
+					&.grid-#{$key}-#{$i} {
+						grid-template-columns: repeat($i, 1fr);
+					}
+					&.grid-gap-#{$key}-#{$i*5} {
+						grid-gap: $i * 5;
+					}
+                }
+			}
+		}
+	}
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+    <div class="layout">
+        <header class="header" id="header">
+            <section class="section--headerTop" id="headerTop">
+                <div class="container">
+                    <div class="headerTop">
+
+                    </div>
+                </div>
+            </section>
+            <nav class=" section--header" id="headerMenu">
+                <div class="container">
+                    <div class="header__content">
+                        <a href="#" class="logo"><img src="assets/images/logo.png" class=""/></a>
+                        <ul class="menu-main">
+                            <li class="active"><a href="#">CAKE DELIVERY</a></li>
+                            <li><a href="#">HOW TO ORDER</a></li>
+                            <li><a href="#">CAKE DELIVERY</a></li>
+                            <li><a href="#">CHECK MORE</a></li>
+                        </ul>
+                        <ul class="menu-sign">
+                            <li><a href="#">Sign in</a></li>
+                            <li><a href="#">Sign up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class=" section--welcome">
+                <div class="container container--fluid">
+                    <div class="welcome">
+                        <div class="welcome__image">
+                            <!-- <img src="assets/images/bg_welcome.jpg" alt="welcome"/> -->
+                        </div>
+                        <div class="welcome__container">
+                            <div class="container">
+                                <div class="welcome__content">
+                                    <h1 class="title">
+                                        Welcome to
+                                        <span>Thapa Cafe</span>
+                                        <br/>House of Cake Lover oo Yes.
+                                    </h1>
+                                    <div class="buttons">
+                                        <a href="#" class="btn btn--full">Click to order</a>
+                                        <a href="#" class="btn btn--full">Show me more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <main class="main main--landingpage">
+            <section class="section section-adsword">
+                <div class="container">
+
+                </div>
+            </section>
+            <section class="section section-carousel">
+                <div class="container">
+                    <h2 class="pageTitle">Feature</h2>
+                    <div class="carousel">
+                        <div class="carousel__control">
+                            <button class="btn-prev">Prev</button>
+                            <button class="btn-next">Next</button>
+                        </div>
+                        <ul class="carousel__container">
+                            <li><a><div><img src="assets/images/carousel/1.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/2.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/3.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/4.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/5.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/6.jpg"/></div></a></li>                 
+                        </ul>
+                        
+                    </div>
+                    
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <section class="section section--footer">
+                <div class="container">
+                    <div class="footer__content"></div>
+                </div>
+            </section>
+        </footer>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script>
+        class ComponentCarousel {
+            constructor(props){
+                this.container = props.container;
+                this.buttonNext = props.buttonNext;
+                this.buttonPrev = props.buttonPrev;
+                this.itemShow = props.itemShow ? props.itemShow : 5;
+                this.space = props.space ? props.space : '20';
+            }
+            init(){
+                let self = this;
+                let windowWidth = this.container.parent().width();
+                
+                let totalItem = this.container.find('li').length;
+
+                
+
+                let itemWidth = windowWidth / this.itemShow;
+                
+                
+
+                let container = itemWidth * totalItem;
+
+
+
+                this.container.width(container);
+                this.container.find('li').css('width', itemWidth + 'px');
+
+                
+                
+
+                this.buttonNext.click(function(){
+                    let first = self.container.find('li').first();
+                    first.animate({
+                        'width': 0,
+                    }, function(){
+                        first.appendTo(self.container).css({
+                            'width': itemWidth
+                        })
+                    });
+                });
+                this.buttonPrev.click(function(){
+                    let last = self.container.find('li').last().css({
+                        'width': 0,
+                    });
+                    last.prependTo(self.container);
+                    last.animate({'width': itemWidth});
+                });
+            }
+        }
+        $(document).ready(function(){
+            let carousel = new ComponentCarousel({
+                container: $('.carousel .carousel__container'),
+                buttonNext: $('.btn-next'),
+                buttonPrev: $('.btn-prev')
+            });
+            carousel.init();
+        });
+    </script>
+</body>
+</html>

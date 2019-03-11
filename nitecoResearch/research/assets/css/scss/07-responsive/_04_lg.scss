@@ -1,0 +1,4 @@
+/* Large devices (laptops/desktops, 992px and up) */
+@include media-min-width($lg) {
+  .example {background: orange;}
+} 

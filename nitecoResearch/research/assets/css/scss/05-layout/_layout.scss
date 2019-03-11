@@ -1,0 +1,17 @@
+.layout {
+    .header {}
+    .footer {}
+    .main {
+        .sidebar {}
+        .article {}
+        
+    }
+    .main.main--landingpage {}
+    .main.main--list {
+        display: flex;
+    }
+    .main.main--detail {}
+}
+.layout.layout--detail {
+
+}

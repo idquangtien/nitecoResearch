@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body>
-    <div class="carousel">
-        <ul class="carousel__container">
-            <li><a><div><img src="assets/images/carousel/1.jpg"/></div></a></li>          
-            <li><a><div><img src="assets/images/carousel/2.jpg"/></div></a></li>          
-            <li><a><div><img src="assets/images/carousel/3.jpg"/></div></a></li>          
-            <li><a><div><img src="assets/images/carousel/4.jpg"/></div></a></li>          
-            <li><a><div><img src="assets/images/carousel/5.jpg"/></div></a></li>          
-            <li><a><div><img src="assets/images/carousel/6.jpg"/></div></a></li>                 
-        </ul>
-        <div class="carousel__control">
-            <button class="btn-prev">Prev</button>
-            <button class="btn-next">Next</button>
-        </div>
+    <div class="layout">
+        <main class="main main--landingpage">
+            <section class="section">
+                <div class="container">
+                    <div class="carousel">
+                        <ul class="carousel__container">
+                            <li><a><div><img src="assets/images/carousel/1.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/2.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/3.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/4.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/5.jpg"/></div></a></li>          
+                            <li><a><div><img src="assets/images/carousel/6.jpg"/></div></a></li>                 
+                        </ul>
+                        <div class="carousel__control">
+                            <button class="btn-prev">Prev</button>
+                            <button class="btn-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
     
     
@@ -36,10 +44,14 @@
             }
             init(){
                 let self = this;
-                let windowWidth = $(window).width();
+                let windowWidth = this.container.parent().width();
                 
                 let totalItem = this.container.find('li').length;
+
+                
+
                 let itemWidth = windowWidth / this.itemShow;
+                
                 
 
                 let container = itemWidth * totalItem;
@@ -47,7 +59,7 @@
 
 
                 this.container.width(container);
-                this.container.find('li').css('flex-basis', itemWidth + 'px');
+                this.container.find('li').css('width', itemWidth + 'px');
 
                 
                 
@@ -55,19 +67,19 @@
                 this.buttonNext.click(function(){
                     let first = self.container.find('li').first();
                     first.animate({
-                        'flex-basis': 0,
+                        'width': 0,
                     }, function(){
                         first.appendTo(self.container).css({
-                            'flex-basis': itemWidth
+                            'width': itemWidth
                         })
                     });
                 });
                 this.buttonPrev.click(function(){
                     let last = self.container.find('li').last().css({
-                        'flex-basis': 0,
+                        'width': 0,
                     });
                     last.prependTo(self.container);
-                    last.animate({'flex-basis': itemWidth});
+                    last.animate({'width': itemWidth});
                 });
             }
         }
