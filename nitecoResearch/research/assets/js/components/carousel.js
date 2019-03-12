@@ -4,7 +4,7 @@ class ComponentCarousel {
         this.buttonNext = props.buttonNext;
         this.buttonPrev = props.buttonPrev;
         this.itemShow = props.itemShow ? props.itemShow : 5;
-        // this.space = props.space ? props.space : 20;
+        this.space = props.space ? props.space : '20';
     }
     init(){
         let self = this;
@@ -14,8 +14,7 @@ class ComponentCarousel {
 
         
 
-        let itemWidth = Math.floor((windowWidth) / (this.itemShow));
-
+        let itemWidth = windowWidth / this.itemShow;
         
         
 
@@ -24,9 +23,7 @@ class ComponentCarousel {
 
 
         this.container.width(container);
-
-        this.container.find('li').css({'flex-basis': itemWidth + 'px'});
-
+        this.container.find('li').css('width', itemWidth + 'px');
 
         
         
@@ -46,7 +43,7 @@ class ComponentCarousel {
                 'width': 0,
             });
             last.prependTo(self.container);
-            last.animate({'flex-basis': itemWidth});
+            last.animate({'width': itemWidth});
         });
     }
 }
