@@ -9,3 +9,22 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
+.pageTitle {
+    strong {}
+    em {}
+}
+
+.description{
+    p{}
+    p a{}
+    p a:hover{}
+    p strong{}
+    table{}
+    table tr{}
+    table tr:nth-child(2n){}
+    table th,
+    table td{}
+    table th{}
+    table td.empty,
+    table th.empty{}
+  }

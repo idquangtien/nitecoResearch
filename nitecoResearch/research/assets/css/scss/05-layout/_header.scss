@@ -12,7 +12,7 @@
             align-items: center;
             .logo {
                img {
-                    height: 40px;
+                    height: 60px;
                     margin-right: 20px;
                }
             }
@@ -24,8 +24,8 @@
                 font-weight: bold;
                 li {
                     position: relative;
-                    height: 50px;
-                    line-height: 50px;
+                    height: 80px;
+                    line-height: 80px;
                     padding: 0 15px;
                     a { 
                         display: block;
@@ -70,7 +70,7 @@
         .welcome {
             position: relative;
             min-height: 60vh;
-            background-color: darken($primary, 50%);
+            background-color: darken($primary, 55%);
             .welcome__image {
                 img {
                     width: 100%;
