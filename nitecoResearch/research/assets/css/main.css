@@ -284,306 +284,246 @@
   display: grid; }
   @media only screen and (max-width: 599px) {
     .grid.grid-xs-1 {
-      -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr); }
     .grid.grid-gap-xs-5 {
       grid-gap: 5; }
     .grid.grid-xs-2 {
-      -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr); }
     .grid.grid-gap-xs-10 {
       grid-gap: 10; }
     .grid.grid-xs-3 {
-      -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr); }
     .grid.grid-gap-xs-15 {
       grid-gap: 15; }
     .grid.grid-xs-4 {
-      -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr); }
     .grid.grid-gap-xs-20 {
       grid-gap: 20; }
     .grid.grid-xs-5 {
-      -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr); }
     .grid.grid-gap-xs-25 {
       grid-gap: 25; }
     .grid.grid-xs-6 {
-      -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr); }
     .grid.grid-gap-xs-30 {
       grid-gap: 30; }
     .grid.grid-xs-7 {
-      -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr); }
     .grid.grid-gap-xs-35 {
       grid-gap: 35; }
     .grid.grid-xs-8 {
-      -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr); }
     .grid.grid-gap-xs-40 {
       grid-gap: 40; }
     .grid.grid-xs-9 {
-      -ms-grid-columns: (1fr)[9];
       grid-template-columns: repeat(9, 1fr); }
     .grid.grid-gap-xs-45 {
       grid-gap: 45; }
     .grid.grid-xs-10 {
-      -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr); }
     .grid.grid-gap-xs-50 {
       grid-gap: 50; }
     .grid.grid-xs-11 {
-      -ms-grid-columns: (1fr)[11];
       grid-template-columns: repeat(11, 1fr); }
     .grid.grid-gap-xs-55 {
       grid-gap: 55; }
     .grid.grid-xs-12 {
-      -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr); }
     .grid.grid-gap-xs-60 {
       grid-gap: 60; } }
   @media only screen and (min-width: 600px) {
     .grid.grid-sm-1 {
-      -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr); }
     .grid.grid-gap-sm-5 {
       grid-gap: 5; }
     .grid.grid-sm-2 {
-      -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr); }
     .grid.grid-gap-sm-10 {
       grid-gap: 10; }
     .grid.grid-sm-3 {
-      -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr); }
     .grid.grid-gap-sm-15 {
       grid-gap: 15; }
     .grid.grid-sm-4 {
-      -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr); }
     .grid.grid-gap-sm-20 {
       grid-gap: 20; }
     .grid.grid-sm-5 {
-      -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr); }
     .grid.grid-gap-sm-25 {
       grid-gap: 25; }
     .grid.grid-sm-6 {
-      -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr); }
     .grid.grid-gap-sm-30 {
       grid-gap: 30; }
     .grid.grid-sm-7 {
-      -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr); }
     .grid.grid-gap-sm-35 {
       grid-gap: 35; }
     .grid.grid-sm-8 {
-      -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr); }
     .grid.grid-gap-sm-40 {
       grid-gap: 40; }
     .grid.grid-sm-9 {
-      -ms-grid-columns: (1fr)[9];
       grid-template-columns: repeat(9, 1fr); }
     .grid.grid-gap-sm-45 {
       grid-gap: 45; }
     .grid.grid-sm-10 {
-      -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr); }
     .grid.grid-gap-sm-50 {
       grid-gap: 50; }
     .grid.grid-sm-11 {
-      -ms-grid-columns: (1fr)[11];
       grid-template-columns: repeat(11, 1fr); }
     .grid.grid-gap-sm-55 {
       grid-gap: 55; }
     .grid.grid-sm-12 {
-      -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr); }
     .grid.grid-gap-sm-60 {
       grid-gap: 60; } }
   @media only screen and (min-width: 768px) {
     .grid.grid-md-1 {
-      -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr); }
     .grid.grid-gap-md-5 {
       grid-gap: 5; }
     .grid.grid-md-2 {
-      -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr); }
     .grid.grid-gap-md-10 {
       grid-gap: 10; }
     .grid.grid-md-3 {
-      -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr); }
     .grid.grid-gap-md-15 {
       grid-gap: 15; }
     .grid.grid-md-4 {
-      -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr); }
     .grid.grid-gap-md-20 {
       grid-gap: 20; }
     .grid.grid-md-5 {
-      -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr); }
     .grid.grid-gap-md-25 {
       grid-gap: 25; }
     .grid.grid-md-6 {
-      -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr); }
     .grid.grid-gap-md-30 {
       grid-gap: 30; }
     .grid.grid-md-7 {
-      -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr); }
     .grid.grid-gap-md-35 {
       grid-gap: 35; }
     .grid.grid-md-8 {
-      -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr); }
     .grid.grid-gap-md-40 {
       grid-gap: 40; }
     .grid.grid-md-9 {
-      -ms-grid-columns: (1fr)[9];
       grid-template-columns: repeat(9, 1fr); }
     .grid.grid-gap-md-45 {
       grid-gap: 45; }
     .grid.grid-md-10 {
-      -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr); }
     .grid.grid-gap-md-50 {
       grid-gap: 50; }
     .grid.grid-md-11 {
-      -ms-grid-columns: (1fr)[11];
       grid-template-columns: repeat(11, 1fr); }
     .grid.grid-gap-md-55 {
       grid-gap: 55; }
     .grid.grid-md-12 {
-      -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr); }
     .grid.grid-gap-md-60 {
       grid-gap: 60; } }
   @media only screen and (min-width: 992px) {
     .grid.grid-lg-1 {
-      -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr); }
     .grid.grid-gap-lg-5 {
       grid-gap: 5; }
     .grid.grid-lg-2 {
-      -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr); }
     .grid.grid-gap-lg-10 {
       grid-gap: 10; }
     .grid.grid-lg-3 {
-      -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr); }
     .grid.grid-gap-lg-15 {
       grid-gap: 15; }
     .grid.grid-lg-4 {
-      -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr); }
     .grid.grid-gap-lg-20 {
       grid-gap: 20; }
     .grid.grid-lg-5 {
-      -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr); }
     .grid.grid-gap-lg-25 {
       grid-gap: 25; }
     .grid.grid-lg-6 {
-      -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr); }
     .grid.grid-gap-lg-30 {
       grid-gap: 30; }
     .grid.grid-lg-7 {
-      -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr); }
     .grid.grid-gap-lg-35 {
       grid-gap: 35; }
     .grid.grid-lg-8 {
-      -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr); }
     .grid.grid-gap-lg-40 {
       grid-gap: 40; }
     .grid.grid-lg-9 {
-      -ms-grid-columns: (1fr)[9];
       grid-template-columns: repeat(9, 1fr); }
     .grid.grid-gap-lg-45 {
       grid-gap: 45; }
     .grid.grid-lg-10 {
-      -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr); }
     .grid.grid-gap-lg-50 {
       grid-gap: 50; }
     .grid.grid-lg-11 {
-      -ms-grid-columns: (1fr)[11];
       grid-template-columns: repeat(11, 1fr); }
     .grid.grid-gap-lg-55 {
       grid-gap: 55; }
     .grid.grid-lg-12 {
-      -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr); }
     .grid.grid-gap-lg-60 {
       grid-gap: 60; } }
   @media only screen and (min-width: 1200px) {
     .grid.grid-xl-1 {
-      -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr); }
     .grid.grid-gap-xl-5 {
       grid-gap: 5; }
     .grid.grid-xl-2 {
-      -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr); }
     .grid.grid-gap-xl-10 {
       grid-gap: 10; }
     .grid.grid-xl-3 {
-      -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr); }
     .grid.grid-gap-xl-15 {
       grid-gap: 15; }
     .grid.grid-xl-4 {
-      -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr); }
     .grid.grid-gap-xl-20 {
       grid-gap: 20; }
     .grid.grid-xl-5 {
-      -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr); }
     .grid.grid-gap-xl-25 {
       grid-gap: 25; }
     .grid.grid-xl-6 {
-      -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr); }
     .grid.grid-gap-xl-30 {
       grid-gap: 30; }
     .grid.grid-xl-7 {
-      -ms-grid-columns: (1fr)[7];
       grid-template-columns: repeat(7, 1fr); }
     .grid.grid-gap-xl-35 {
       grid-gap: 35; }
     .grid.grid-xl-8 {
-      -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr); }
     .grid.grid-gap-xl-40 {
       grid-gap: 40; }
     .grid.grid-xl-9 {
-      -ms-grid-columns: (1fr)[9];
       grid-template-columns: repeat(9, 1fr); }
     .grid.grid-gap-xl-45 {
       grid-gap: 45; }
     .grid.grid-xl-10 {
-      -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr); }
     .grid.grid-gap-xl-50 {
       grid-gap: 50; }
     .grid.grid-xl-11 {
-      -ms-grid-columns: (1fr)[11];
       grid-template-columns: repeat(11, 1fr); }
     .grid.grid-gap-xl-55 {
       grid-gap: 55; }
     .grid.grid-xl-12 {
-      -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr); }
     .grid.grid-gap-xl-60 {
       grid-gap: 60; } }
