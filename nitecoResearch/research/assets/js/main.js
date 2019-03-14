@@ -15,7 +15,7 @@ class ComponentSlideshow {
     setWidth(){
         let self = this;
         let totalWidth = 0;
-        let widthParent = this.container.parent().width();
+        let widthParent = this.container.parent(".slideshow").width();
         console.log('widthparent', widthParent);
         self.container.find(".slide").css({"flex-basis": widthParent + "px", "min-width": widthParent + "px"});
         

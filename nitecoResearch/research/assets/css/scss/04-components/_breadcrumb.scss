@@ -1,0 +1,41 @@
+ul.breadcrumb {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    li {
+        margin-right: 10px;
+        text-transform: uppercase;
+        color: #ababab;
+        font-weight: 500;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    li:not(:last-child) {
+        a {
+            color: $primary;
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+        &:after {
+            content: "/";
+            margin-left: 10px;
+        }
+    }
+    li:last-child {
+        &:after {
+            content: "";
+        }
+        a {
+            color: inherit;
+            &:hover {
+                cursor: default;
+            }
+        }
+        
+    }
+}
