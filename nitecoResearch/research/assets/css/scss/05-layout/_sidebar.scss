@@ -1,8 +1,163 @@
 .sidebar {
-    color: black;
-    width: 200px;
-    height: 100px;
-    border: 1px solid;
-    position: relative;
-    overflow: auto;
+    $sidebar-space: 40px;
+    color: #767474;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    &__header {
+        margin: $sidebar-space 0;
+        .logo {
+            display: block;
+            padding: 0 20px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    &__meta {
+        margin: $sidebar-space 30px;
+        
+        display: flex;
+        justify-content: space-around;
+        
+        .meta {
+            span {
+                text-indent: -9999px;
+                display: inline-block;
+            }
+            i {
+                font-size: 25px;
+                color: gray;
+            }
+            &:hover {
+                cursor: pointer;
+                i {
+                    color: black;
+                }
+            }
+            &.menuResponsive {
+                display: none;
+            }
+        }
+    }
+    &__nav {
+        margin-bottom: $sidebar-space;
+        // flex: 1;
+        // overflow: auto;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menuSidebar {
+            
+            text-align: center;
+            font-size: 13px;
+            li {
+                a {
+                    display: block;
+                    padding: 10px;
+                    color: #767474;
+                }
+            }
+            li:hover:not(.active) {
+                cursor: pointer;
+                a {
+                    color: black;
+                }
+            }
+            li.active {
+               a {
+                   color: black;
+                   font-weight: bold;
+               } 
+            }
+        }
+        .menuSidebar.collection {
+            text-transform: uppercase;
+            font-size: 11px;
+            margin-bottom: $sidebar-space;
+            & > li {
+                border-top: 1px solid #f7f7f7;
+                &:last-child {
+                    border-bottom: 1px solid #f7f7f7;    
+                }
+                & > a {
+                    padding: 15px;
+                    position: relative;
+                    span {                        
+                    }
+                    &:after {
+                        content: "\e64b";
+                        font-family: themify;
+                        position: absolute;
+                        right: 20px;
+                    }
+                }
+                &:last-child {
+                }
+                ul {
+                    display: none;
+                    li {
+                        border-top: 1px solid #f7f7f7;
+                        a {
+                            font-weight: normal;
+                        }
+                    }
+                    li.active {
+                        a {
+                            font-weight: bold;
+                        }
+                    }
+                    li:hover {
+                        cursor: pointer;
+                        background-color: #f7f7f7;
+                    }
+                    li:last-child {
+                        border-bottom: none;    
+                    }
+
+                }
+            }
+            & > li.opened {
+                & > a {
+                    font-weight: bold;
+                }
+                ul {
+                    display: block;
+                }
+            }
+        }
+    }
+    &__footer {
+        font-size: 13px;
+        margin-bottom: $sidebar-space;
+        .socials {
+            display: flex;
+            justify-content: space-around;
+            width: 70%;
+            margin: 0 auto;
+            font-size: 16px;
+            a {
+                &:hover {
+                    cursor: pointer;
+                    color: black;
+                }
+            }
+            
+
+        }
+        .copyright {
+            margin-top: $sidebar-space;
+            text-align: center;
+            line-height: 20px;
+            a {
+                text-decoration: none;
+                color: $primary;
+                font-weight: 500;
+            }
+        }
+    }
 }

@@ -5,81 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link rel="stylesheet" href="assets/plugins/themify-icons/themify-icons.css"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body>
-    <div class="layout">
-        <header class="header" id="header">
-            <section class="section--headerTop" id="headerTop">
-                <div class="container">
-                    <div class="headerTop">
-
-                    </div>
-                </div>
-            </section>
-            <nav class=" section--header" id="headerMenu">
-                <div class="container">
-                    <div class="header__content">
-                        <a href="#" class="logo"><img src="assets/images/logo.png" class=""/></a>
-                        <ul class="menu-main">
-                            <li class="active"><a href="#">CAKE DELIVERY</a></li>
-                            <li><a href="#">HOW TO ORDER</a></li>
-                            <li><a href="#">CAKE DELIVERY</a></li>
-                            <li><a href="#">CHECK MORE</a></li>
+    <div class="wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__header">
+                <a href="#" class="logo">
+                    <img src="assets/images/logo.jpg" alt="logo"/>
+                </a>
+            </div>
+            <div class="sidebar__meta">
+                <a class="meta menuResponsive">
+                    <span>Menu</span>
+                    <i class="ti-menu"></i>
+                </a>
+                <a class="meta">
+                    <span>Account</span>
+                    <i class="ti-user"></i>
+                </a>
+                <a class="meta">
+                    <span>Search</span>
+                    <i class="ti-search"></i>
+                </a>
+                <a class="meta">
+                    <span>Cart</span>
+                    <i class="ti-shopping-cart"></i>
+                </a>
+            </div>
+            <div class="sidebar__nav">
+                <ul class="menuSidebar collection">
+                    <li class="opened--1">
+                        <a>
+                            <span>collections</span> 
+                        </a>
+                        <ul>
+                            <li><a>all</a></li>
+                            <li><a>accessories</a></li>
+                            <li><a>cosmetics</a></li>
+                            <li><a>woman</a></li>
+                            <li><a>men</a></li>
+                            <li><a>children</a></li>
+                            <li class="active"><a>gadgets</a></li>
                         </ul>
-                        <ul class="menu-sign">
-                            <li><a href="#">Sign in</a></li>
-                            <li><a href="#">Sign up</a></li>
-                        </ul>
-                    </div>
+                    </li>
+                </ul>
+                <ul class="menuSidebar">
+                    <li><a>About Us</a></li>
+                    <li><a>Our Blog</a></li>
+                    <li><a>Theme Features</a></li>
+                    <li><a>Contact Us</a></li>
+                    <li><a>Newsletter</a></li>
+                </ul>
+            </div>
+            <div class="sidebar__footer">
+                <div class="socials">
+                    <a class="social"><i class="ti-twitter"></i></a>
+                    <a class="social"><i class="ti-facebook"></i></a>
+                    <a class="social"><i class="ti-instagram"></i></a>
+                    <a class="social"><i class="ti-google"></i></a>
                 </div>
-            </nav>
-            <section class=" section--welcome">
-                <div class="container container--fluid">
-                    <div class="welcome">
-                        <div class="welcome__image">
-                            <!-- <img src="assets/images/bg_welcome.jpg" alt="welcome"/> -->
+                <div class="copyright">
+                    <div>Copyright © 2019</div>
+                    <div><a href="#">King Powered by Shopify</a></div> 
+                </div>
+            </div>
+        </aside>
+        <main class="main">
+            <div class="slideshow" id="slideshow">
+                <div class="slideshow__container">
+                    <div class="slide">
+                        <div class="slide__image">
+                            <img src="assets/images/slideshow/slideshow001.jpg"/>
                         </div>
-                        <div class="welcome__container">
-                            <div class="container">
-                                <div class="welcome__content">
-                                    <h1 class="title">
-                                        Welcome to
-                                        <span>Thapa Cafe</span>
-                                        <br/>House of Cake Lover oo Yes.
-                                    </h1>
-                                    <div class="buttons">
-                                        <a href="#" class="btn btn--full">Click to order</a>
-                                        <a href="#" class="btn btn--full">Show me more</a>
-                                    </div>
-                                </div>
+                        <div class="slide__container">
+                            <div class="slide__content">
+                                <div class="status">Final Sale</div>
+                                <div class="title">Natural cosmetics monitor</div>
+                                <div class="desc">Starting from $39.00</div>
+                                <a class="btn">learn more <i class="ti-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide__image">
+                            <img src="assets/images/slideshow/slideshow002.jpg"/>
+                        </div>
+                        <div class="slide__container">
+                            <div class="slide__content">
+                                <div class="status">New Arrival</div>
+                                <div class="title">Personal environment monitor</div>
+                                <div class="desc">Starting from $68.00</div>
+                                <a class="btn">learn more <i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </header>
-        <main class="main main--landingpage">
-            <section class="section section--">
-                <div class="container">
-                    
-                    <img class="avatar"/>
-                    <ul class="list">
+                <div class="slideshow__control">
+                    <a class="btn-prev"><i class="ti-arrow-left"></i></a>
+                    <a class="btn-next"><i class="ti-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="gridCategories">
 
-                    </ul>
-                    
-                </div>
-            </section>
-            
+            </div>
         </main>
-        <footer class="footer">
-            <section class="section section--footer">
-                <div class="container">
-                    <div class="footer__content"></div>
-                </div>
-            </section>
-        </footer>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
@@ -90,17 +122,18 @@
 
 
     <script>
-        $.get("https://reqres.in/api/users", {
-            // page: 3
-        }, function(data,status){
-            let li = '';
-            data.data.forEach(item => {
-                console.log(item);
-                li += '<li>'+item.first_name+ ' - '+item.last_name+'</li>';
-            });
-            $('.list').append(li);
-            // console.log(data.data, status);
-        });
+        // $.get("https://reqres.in/api/users", {
+        //     // page: 3
+        // }, function(data,status){
+        //     let li = '';
+        //     data.data.forEach(item => {
+        //         console.log(item);
+        //         li += '<li>'+item.first_name+ ' - '+item.last_name+'</li>';
+        //     });
+        //     $('.list').append(li);
+        //     // console.log(data.data, status);
+        // });
+
     </script>
 </body>
 </html>

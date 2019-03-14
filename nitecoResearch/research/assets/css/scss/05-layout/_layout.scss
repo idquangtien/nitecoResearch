@@ -1,17 +1,13 @@
-.layout {
-    .header {}
-    .footer {}
+.wrapper {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 290px;
+        height: 100vh;
+    }
     .main {
-        .sidebar {}
-        .article {}
-        
+        margin-left: 290px;
+        display: block;
     }
-    .main.main--landingpage {}
-    .main.main--list {
-        display: flex;
-    }
-    .main.main--detail {}
-}
-.layout.layout--detail {
-
 }
