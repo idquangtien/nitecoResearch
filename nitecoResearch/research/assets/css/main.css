@@ -248,18 +248,90 @@ ul.breadcrumb li:last-child a:hover {
   background-color: #eee;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
-.carousel__container li a img {
+.carousel__container li a .carouselItem__image {
   display: block;
   width: 100%;
-  height: 100%;
+}
+
+.carousel__container li a .carouselItem__image img {
+  display: block;
+  width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
 
-.carousel__container li:nth-child(even) a {
-  background-color: #ddd;
+.carousel__container li a .carouselItem__container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.carousel__container li a .carouselItem__container .carouselItem__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.carousel__container li a .carouselItem__container .carouselItem__content .top .collection {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+  opacity: .5;
+  margin: 5px 0 15px;
+  text-transform: uppercase;
+}
+
+.carousel__container li a .carouselItem__container .carouselItem__content .top .title {
+  font-size: 18px;
+  line-height: 24px;
+  color: #222;
+  width: 75%;
+}
+
+.carousel__container li a .carouselItem__container .carouselItem__content .bottom .price {
+  font-size: 16px;
+  line-height: 16px;
+  color: #878787;
+  display: block;
+}
+
+.carousel__container li a .carouselItem__container .carouselItem__content .bottom .price strong {
+  color: #222;
+  font-size: 18px;
+}
+
+.carousel__container li a .carouselItem__container .carouselItem__content .bottom .price del {
+  display: block;
+  margin-top: 5px;
+}
+
+.carousel__container li:hover {
+  cursor: pointer;
+}
+
+.carousel__container li:hover a .carouselItem__container {
+  display: block;
 }
 
 .carousel__container li:last-child a {
@@ -273,7 +345,7 @@ ul.breadcrumb li:last-child a:hover {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background-color: black;
+  background-color: gray;
   color: white;
   font-size: 11px;
   position: absolute;
@@ -282,6 +354,7 @@ ul.breadcrumb li:last-child a:hover {
 
 .carousel__control .btn-next:hover, .carousel__control .btn-prev:hover {
   cursor: pointer;
+  background-color: black;
 }
 
 .carousel__control .btn-next:focus, .carousel__control .btn-prev:focus {
@@ -435,14 +508,13 @@ ul.breadcrumb li:last-child a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: 100px;
-  grid-gap: 20px;
+  grid-gap: 0px;
 }
 
 .gridPinterest .gridItem {
   -webkit-box-shadow: inset 0 0 0 1px #eee;
   box-shadow: inset 0 0 0 1px #eee;
   position: relative;
-  border-radius: 5px;
   -webkit-transition: .5;
   -o-transition: .5;
   transition: .5;
@@ -450,29 +522,82 @@ ul.breadcrumb li:last-child a:hover {
 
 .gridPinterest .gridItem .gridItem__content {
   display: block;
-  padding: 10px;
 }
 
-.gridPinterest .gridItem .gridItem__content img {
+.gridPinterest .gridItem .gridItem__content .gridItem__image img {
   width: 100%;
   display: block;
-  border-radius: 5px;
 }
 
-.gridPinterest .gridItem .gridItem__content img.full {
+.gridPinterest .gridItem .gridItem__content .gridItem__image img.full {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
+  top: 0;
+  left: 0;
+  width: calc(100% - 0px);
+  height: calc(100% - 0px);
   -o-object-fit: cover;
   object-fit: cover;
 }
 
+.gridPinterest .gridItem .gridItem__content .gridItem__summary {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.gridPinterest .gridItem .gridItem__content .gridItem__summary .top .collection {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+  opacity: .5;
+  margin: 5px 0 15px;
+  text-transform: uppercase;
+}
+
+.gridPinterest .gridItem .gridItem__content .gridItem__summary .top .title {
+  font-size: 18px;
+  line-height: 24px;
+  color: #222;
+  width: 75%;
+}
+
+.gridPinterest .gridItem .gridItem__content .gridItem__summary .bottom .price {
+  font-size: 16px;
+  line-height: 16px;
+  color: #878787;
+  display: block;
+}
+
+.gridPinterest .gridItem .gridItem__content .gridItem__summary .bottom .price strong {
+  color: #222;
+  font-size: 18px;
+}
+
+.gridPinterest .gridItem .gridItem__content .gridItem__summary .bottom .price del {
+  display: block;
+  margin-top: 5px;
+}
+
 .gridPinterest .gridItem:hover {
   cursor: pointer;
-  -webkit-box-shadow: 0 2px 10px #ccc;
-  box-shadow: 0 2px 10px #ccc;
+}
+
+.gridPinterest .gridItem:hover .gridItem__summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .productDetail {
