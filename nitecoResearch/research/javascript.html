@@ -7,6 +7,29 @@
     <title>Document</title>
 </head>
 <body>
+    <a id="foo">
+        button <span>primary</span>
+    </a>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        var searchForm = $('#SearchForm');
+        var toggleSearch = $('.toggle-search-bar');
+        searchBox.on("click", $(this), function(e){
+            e.stopPropagation();
+            if( !$(this).is(e.target) ) {
+                searchBoxContent.slideDown(300);
+            } else {
+                searchBoxContent.slideToggle(300);
+            }
+        });
+        $("body").on("click", searchBox,function(e){
+            if( !searchBox.is(e.target)) {
+                searchBoxContent.slideUp(300);   
+            }
+        });
+    </script>
+
     <script>
             function newFunction(){
                 alert('newFunction');

@@ -1,9 +1,0 @@
-ul.breadcrumb {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  ul.breadcrumb li {
-    margin-right: 20px; }

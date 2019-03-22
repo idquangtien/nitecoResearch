@@ -1,53 +1,57 @@
 // ===================================================
-// CONFIG
+// ABSTRACTS
 // ===================================================
-    @import 'scss/01-config/variable';
-// ===================================================
-// HELPERS
-// ===================================================
-    @import 'scss/02-helps/function';
-    @import 'scss/02-helps/mixin';
-    @import 'scss/02-helps/animation';
+    @import 'scss/01-abstracts/variable';
+    @import 'scss/01-abstracts/mixin';
+    @import 'scss/01-abstracts/function'; 
 // ===================================================
 // RESET
 // ===================================================
-    @import 'scss/03-reset/base';
-    @import 'scss/03-reset/font';
+    @import 'scss/02-reset/font';
+    @import 'scss/02-reset/base';
+    @import 'scss/02-reset/animation';
 // ===================================================
 // COMPONENTS
 // ===================================================
-    @import 'scss/04-components/button';
-    @import 'scss/04-components/form';
-    @import 'scss/04-components/breadcrumb';
-    @import 'scss/04-components/tab';
-    @import 'scss/04-components/dimmer';
-    @import 'scss/04-components/modal';
-    @import 'scss/04-components/menu';
-    @import 'scss/04-components/carousel';
-    @import 'scss/04-components/slideshow';
-    @import 'scss/04-components/gridPinterest';
-    @import 'scss/04-components/product';
+    @import 'scss/03-components/button';
+    @import 'scss/03-components/form';
+    @import 'scss/03-components/breadcrumb';
+    @import 'scss/03-components/tab';
+    @import 'scss/03-components/dimmer';
+    @import 'scss/03-components/modal';
+    @import 'scss/03-components/menu';
+    @import 'scss/03-components/slideshow';
+    @import 'scss/03-components/carousel';
+    @import 'scss/03-components/product';
 // ===================================================
-// LAYOUT
+// LAYOUTS
 // ===================================================
-    @import 'scss/05-layout/grid';
-    @import 'scss/05-layout/layout';
-    @import 'scss/05-layout/header';
-    @import 'scss/05-layout/footer';
-    @import 'scss/05-layout/sidebar';
+    @import 'scss/04-layouts/grid';
+    @import 'scss/04-layouts/gridPinterest';
+    @import 'scss/04-layouts/header';
+    @import 'scss/04-layouts/footer';
+    @import 'scss/04-layouts/navigation';
+    @import 'scss/04-layouts/sidebar';
 // ===================================================
-// CUSTOM
+// PAGES
 // ===================================================
-    @import 'scss/06-custom/global';
-    @import 'scss/06-custom/custom';
+    @import 'scss/05-pages/page';
+    @import 'scss/05-pages/page.home';
+    @import 'scss/05-pages/page.list';
+    @import 'scss/05-pages/page.detail';
+    @import 'scss/05-pages/page.blog';
+    @import 'scss/05-pages/page.contact';
+// ===================================================
+// CORE
+// ===================================================
+    @import 'scss/06-core/global';
+    @import 'scss/06-core/core';
 // ===================================================
 // RESPONSIVE
 // ===================================================
-    @import 'scss/07-responsive/01_xs';
-    @import 'scss/07-responsive/02_sm';
-    @import 'scss/07-responsive/03_md';
-    @import 'scss/07-responsive/04_lg';
-    @import 'scss/07-responsive/05_xl';
+    @import 'scss/07-views/mobile';
+    @import 'scss/07-views/tablet';
+    @import 'scss/07-views/desktop';
 
 
 
