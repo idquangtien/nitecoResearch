@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+
+
+	</style>
+</head>
+<body>
+	
+
+
+	<div class="search-box" style="position: relative; background-color: yellow;">
+		ABCDDDDDDDD
+		<div class="component-content" 
+			style="position: absolute; top: 100%; left: 0; width: auto; display: none; z-index: 1000; background-color: red;">
+			<form action="">
+				<input type="text" placeholder="search..." />
+				<button type="button">submit</button>
+				<span>AAAAAAAAAAAAA</span>
+			</form>
+		</div>
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+    <script>
+    	$(document).ready(function(){
+    		let searchBox = $(".search-box");
+    		let searchBoxContent = searchBox.find(".component-content");
+
+    		var r = $.contains(searchBox.get(0), searchBoxContent.get(0));
+
+    		searchBox.on('click', function(e){
+    			if( !$('form').children().is(e.target) ) {
+    				// e.preventDefault();
+    				searchBoxContent.slideToggle(300);
+    			}
+    		});
+    		$(document).on('click', function(e){
+    			if( !searchBox.is(e.target) && !$('form').children().is(e.target) ) {
+    				searchBoxContent.slideUp(300);
+    			}
+    		});
+    	});
+
+
+    </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 .grid {
 	display: grid;
 	@each $key, $value in $breakpoints {
-		@if $key == 'xs' {
+		@if $key == 'sm' {
 			@include media-max-width($value) {
 				@for $i from 1 through 12 {
 					&.grid-#{$key}-#{$i} {

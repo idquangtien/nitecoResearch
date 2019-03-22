@@ -1,0 +1,43 @@
+$primary: #bb974e;//#59a3fc;
+$accent: #ff0040;
+$text: #222;
+
+// MOBILE
+$sm: 767px;
+// TABLET
+$md: 768px;
+// DESKTOP
+$lg: 1024px;
+
+$breakpoints: (
+	'sm': 767px,
+	'md': 768px,
+	'lg': 1024px
+);
+
+
+$container: 1170px;
+
+
+
+$body-font-family: arial;
+$body-font-size: 14px;
+$body-bg: white;
+$body-text: #222;
+
+
+$header-height: 80px;
+$header-bg: $primary;
+$header-border: #ddd;
+
+
+
+$form-height: 40px;
+$form-border: #ddd;
+
+
+
+
+
+
+
