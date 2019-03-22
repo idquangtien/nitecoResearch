@@ -1,7 +1,28 @@
-$primary: #bb974e;//#59a3fc;
-$accent: #ff0040;
-$text: #222;
+// ===================================================
+// COLORS
+// ===================================================
+$primary: 	#bb974e;//#59a3fc;
+$accent: 	#ff0040;
+$text: 		#222;
 
+$info: 		lightblue;
+$success: 	lightgreen;
+$warning: 	gold;
+$danger: 	tomato;
+
+
+$colors: (
+	'primary': 	$primary,
+	'accent': 	$accent,
+	'text': 	$text,
+	'info': 	$info,
+	'success': 	$success,
+	'warning': 	$warning,
+	'danger': 	$danger
+);
+// ===================================================
+// BREAKPOINTS
+// ===================================================
 // MOBILE
 $sm: 767px;
 // TABLET
@@ -10,30 +31,52 @@ $md: 768px;
 $lg: 1024px;
 
 $breakpoints: (
-	'sm': 767px,
-	'md': 768px,
-	'lg': 1024px
+	'sm': $sm,
+	'md': $md,
+	'lg': $lg
 );
-
-
+// ===================================================
+// COMMON
+// ===================================================
 $container: 1170px;
+// ===================================================
+// BODY
+// ===================================================
+$body-font-family: 'Montserrat', sans-serif;
+$body-font-size: 13px;
+$body-bg: #f7f7f7;
+$body-text: #5d5d5d;
 
-
-
-$body-font-family: arial;
-$body-font-size: 14px;
-$body-bg: white;
-$body-text: #222;
-
-
+// ===================================================
+// HEADER
+// ===================================================
 $header-height: 80px;
 $header-bg: $primary;
 $header-border: #ddd;
-
-
-
+$header-z-index: 2;
+// ===================================================
+// SIDEBAR
+// ===================================================
+$sidebar-bg: white;
+$sidebar-text: #767474;
+$sidebar-border: #f7f7f7;
+$sidebar-space: 40px;
+$sidebar-z-index: 3;
+// ===================================================
+// FORM
+// ===================================================
 $form-height: 40px;
 $form-border: #ddd;
+$font-bg: transparent;
+// ===================================================
+// ICON
+// ===================================================
+$icon-font-family: themify;
+
+// ===================================================
+// Z-INDEX
+// ===================================================
+
 
 
 
