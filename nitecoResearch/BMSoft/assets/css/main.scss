@@ -1,0 +1,76 @@
+// ===================================================
+// ABSTRACTS
+// ===================================================
+    @import 'scss/01-abstracts/variable';
+    @import 'scss/01-abstracts/mixin';
+    @import 'scss/01-abstracts/function'; 
+// ===================================================
+// RESET
+// ===================================================
+    @import 'scss/02-reset/font';
+    @import 'scss/02-reset/base';
+    @import 'scss/02-reset/animation';
+// ===================================================
+// COMPONENTS
+// ===================================================
+    @import 'scss/03-components/button';
+    @import 'scss/03-components/form';
+    @import 'scss/03-components/icon';
+    @import 'scss/03-components/breadcrumb';
+    @import 'scss/03-components/tab';
+    @import 'scss/03-components/dimmer';
+    @import 'scss/03-components/modal';
+    @import 'scss/03-components/menu';
+    @import 'scss/03-components/slideshow';
+    @import 'scss/03-components/carousel';
+    @import 'scss/03-components/product';
+// ===================================================
+// LAYOUTS
+// ===================================================
+    @import 'scss/04-layouts/grid';
+    @import 'scss/04-layouts/gridPinterest';
+    @import 'scss/04-layouts/header';
+    @import 'scss/04-layouts/footer';
+    @import 'scss/04-layouts/navigation';
+    @import 'scss/04-layouts/sidebar';
+    @import 'scss/04-layouts/section';
+// ===================================================
+// PAGES
+// ===================================================
+    @import 'scss/05-pages/page';
+    @import 'scss/05-pages/page.home';
+    @import 'scss/05-pages/page.list';
+    @import 'scss/05-pages/page.detail';
+    @import 'scss/05-pages/page.blog';
+    @import 'scss/05-pages/page.contact';
+// ===================================================
+// CORE
+// ===================================================
+    @import 'scss/06-core/global';
+    @import 'scss/06-core/core';
+// ===================================================
+// RESPONSIVE
+// ===================================================
+    @import 'scss/07-views/mobile';
+    @import 'scss/07-views/tablet';
+    @import 'scss/07-views/desktop';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

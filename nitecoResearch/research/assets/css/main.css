@@ -1,6 +1,15 @@
 .btn {
   display: inline-block;
-  background-color: silver;
+  height: 40px;
+  text-align: center;
+  padding: 0 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.btn:hover, .btn:focus {
+  outline: none;
+  cursor: pointer;
 }
 
 .btn-group {
@@ -950,6 +959,14 @@ ul.breadcrumb li:last-child a:hover {
   }
 }
 
+.grid .grid__cell {
+  background-color: aliceblue;
+}
+
+.grid .grid__cell:nth-child(even) {
+  background-color: beige;
+}
+
 .gridPinterest {
   display: -ms-grid;
   display: grid;
@@ -1375,6 +1392,10 @@ ul.breadcrumb li:last-child a:hover {
   font-weight: 500;
 }
 
+.section {
+  padding: 5% 0;
+}
+
 .wrapper .sidebar {
   position: fixed;
   top: 0;
@@ -1388,6 +1409,56 @@ ul.breadcrumb li:last-child a:hover {
   display: block;
 }
 
+.page .page__title {
+  margin: 0;
+  padding: 0;
+}
+
+.page.page--list .filterbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 30px 30px;
+}
+
+.page.page--list .filterbar .filterTitle {
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.page.page--list .filterbar .filterItem {
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.page.page--list .filterbar .filterItem label {
+  margin-right: 10px;
+}
+
+.page.page--list .filterbar .filterItem .select {
+  position: relative;
+}
+
+.page.page--list .filterbar .filterItem .select select {
+  border: none;
+  background-color: transparent;
+  font-weight: 900;
+  color: #aaa;
+}
+
+.page.page--list .filterbar .filterItem .select select:focus {
+  outline: none;
+}
+
 .container {
   max-width: 1170px;
   width: 100%;
@@ -1396,10 +1467,6 @@ ul.breadcrumb li:last-child a:hover {
 
 .container--fluid {
   max-width: initial;
-}
-
-.section {
-  padding: 5% 0;
 }
 
 .truncateText {
@@ -1413,23 +1480,27 @@ ul.breadcrumb li:last-child a:hover {
   text-overflow: ellipsis;
 }
 
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   background-color: #f7f7f7;
   color: #5d5d5d;
+}
+
+.list > li > a {
+  color: brown;
 }
 
 /* Small devices (portrait tablets and large phones, 767px and up) */

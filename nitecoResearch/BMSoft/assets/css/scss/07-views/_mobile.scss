@@ -1,0 +1,5 @@
+/* Small devices (portrait tablets and large phones, 767px and up) */
+@include media-max-width($sm) {
+	.example {background: green;}
+}
+  

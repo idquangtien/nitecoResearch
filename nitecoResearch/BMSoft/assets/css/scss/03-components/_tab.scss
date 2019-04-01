@@ -1,0 +1,17 @@
+.tab {
+    &__control {
+        .tab__link {
+            &.active {
+                color: red;
+            }
+        }
+    }
+    &__container {
+        .tab__content {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

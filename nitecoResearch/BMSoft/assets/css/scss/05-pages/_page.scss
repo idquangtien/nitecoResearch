@@ -1,0 +1,58 @@
+.wrapper {
+    .header {
+        
+    }
+    .page {
+        flex: 1;
+    }
+}
+
+.page {
+    &__header {
+        z-index: 2;
+        position: sticky;
+        top: $header-height;
+        background-color: $page-header-bg;
+        color: $page-header-color;
+        border-bottom: 1px solid $page-header-border;
+        &__content {
+            display: flex;
+            align-items: center;
+            height: $page-header-height;
+        }
+        .title {
+            padding: 0 10px;
+            small {}
+        }
+        .subTitle {}
+    }
+    &__body {
+        .container {
+        }
+        &__content {
+            display: flex;
+            padding: 10px;
+            .page__aside {
+                width: 220px;
+                margin-right: 10px;
+            }
+            .page__content {
+                flex: 1;
+
+            }
+        }
+    }
+    &__footer {
+
+    }
+    .page__aside {
+        .form--filter {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid $page-border;
+        }
+    }
+    .page__content {
+
+    }
+}

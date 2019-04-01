@@ -1,0 +1,105 @@
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .slideshow__container {
+        display: flex;
+        height: 100%;
+        transition: transform 0.35s ease-in-out;
+        .slide {
+            position: relative;
+            
+            .slide__image {
+                width: 100%;
+                height: 100%;
+                display: block;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: middle;
+                    object-fit: cover;
+                }
+            }
+            .slide__container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            .slide__content {
+                position: relative;
+                width: 50%;
+                .status {
+                    font-style: italic;
+                    font-weight: 300;
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    margin-bottom: 20px;
+                }
+                .title {
+                    font-size: 50px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    // word-spacing: 9999px; 
+                    width: min-intrinsic;
+                    width: -webkit-min-content;
+                    width: -moz-min-content;
+                    width: min-content;
+                    display: table-caption;
+                    display: -ms-grid;
+                    -ms-grid-columns: min-content;
+                }
+                .desc {
+                    margin-top: 20px;
+                    font-size: 16px;
+                    color: gray;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+                .btn {
+                    height: 60px;
+                    line-height: 60px;
+                    background-color: black;
+                    color: white;
+                    text-transform: uppercase;
+                    padding: 0 30px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    i {
+                        margin-left: 10px;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #333;
+                    }
+                }
+            }
+        }
+    }
+    .slideshow__control {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        .btn-next, .btn-prev {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: rgba(black,.5);
+            color: white;
+            font-size: 11px;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(black,1);
+            }
+        }   
+    }
+}
