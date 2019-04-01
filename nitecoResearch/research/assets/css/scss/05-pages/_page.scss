@@ -3,16 +3,25 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 290px;
+        width: $sidebar-width;
         height: 100vh;
     }
     .main {
-        margin-left: 290px;
+        margin-left: $sidebar-width;
         display: block;
     }
 }
 
 .page {
+    &__header {
+        .title {
+            small {}
+        }
+        .subTitle {}
+    }
+    &__body {}
+    &__footer {}
+
     .page__title {
         margin: 0;
         padding: 0;

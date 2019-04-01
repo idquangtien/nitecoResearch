@@ -1,0 +1,22 @@
+.container {
+    max-width: $container;
+    width: 100%;
+    margin: 0 auto;
+    &--fluid {
+        max-width: initial;
+    }
+}
+
+.truncateText {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    -moz-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}

@@ -12,22 +12,10 @@ body {
     background-color: $body-bg;
     color: $body-text;
 }
-.pageTitle {
-    strong {}
-    em {}
-}
 
-.description{
-    p{}
-    p a{}
-    p a:hover{}
-    p strong{}
-    table{}
-    table tr{}
-    table tr:nth-child(2n){}
-    table th,
-    table td{}
-    table th{}
-    table td.empty,
-    table th.empty{}
-  }
+
+.list {
+	& > li > a{
+		color: brown;
+	}
+}
