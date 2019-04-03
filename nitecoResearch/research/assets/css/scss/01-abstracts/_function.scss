@@ -1,0 +1,7 @@
+@function text-contract($color){
+    @if(lightness($color) > 75) {
+        @return black;
+    } @else {
+        @return white;
+    }
+}

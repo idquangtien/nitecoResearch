@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/plugins/themify-icons/themify-icons.css"/>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-content">
+            <h3 class="card-title">Task list</h3>
+            <form id="task-form" method="GET">
+                <div class="form-group">
+                    <label for="task" class="control-label">new task</label>
+                    <div class="input">
+                        <input type="text" name="task" id="task" class="form-control"/>
+                    </div>
+                </div>
+                <input type="submit" value="add task" class="btn btn--primary"/>
+            </form>
+        </div>
+        <div class="card-action">
+            <h3 id="task-title">Tasks</h3>
+            <div class="form-group">
+                <label for="task" class="control-label">filter tasks</label>
+                <div class="input input--line">
+                    <input type="text" name="filter" id="filter" class="form-control-line"/>    
+                </div>
+                
+            </div>
+            <ul class="collection"></ul>
+            <a  class="clear-tasks btn btn--default">Clear task</a>
+        </div>
+    </div>
+    
+    <script src="assets/js/app-todo.js"></script>
+</body>
+</html>

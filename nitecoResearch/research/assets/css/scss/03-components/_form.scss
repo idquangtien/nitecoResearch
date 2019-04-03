@@ -1,22 +1,80 @@
-.form-control {
+%form-control {
     border: none;
     background-color: transparent;
     width: 100%;
     height: $form-height;
-    border: 1px solid $form-border;
     padding: 0 10px;
     display: block;
     &:focus {
         outline: none;
+    }
+}
+.form-control {
+    @extend %form-control;
+    border: 1px solid $form-border;
+    &:focus {
         border-color: black;
     }
+    &:disabled {
+        background-color: $form-disable;
+    }
+}
+.form-control-line {
+    @extend %form-control;
+    border-bottom: 1px solid $form-border;
 }
 .input {
     position: relative;
     transition: .3s;
     &:focus-within {
         box-shadow: 1px 1px 2px rgba(black,.1);
+    }
+}
+.input.input--line {
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        display: block;
+        transition: .5s;
+        background-color: $primary;
+    }
+    &:focus-within {
+        box-shadow: none;
+        &:before {
+            width: 100%;
+        }   
+    }
+}
 
+.input-group-text {
+    display: flex;
+    align-items: center;
+    border: 1px solid $form-border;
+    background-color: $form-disable;
+    padding: 0 10px;
+}
+.input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    .input-group-addon {
+        display: flex;
+        .input-group-text {
+        }
+        &:first-child {
+            margin-right: -1px;
+        }
+        &:last-child {
+            margin-left: -1px;
+        }
+    }
+    .input {
+        flex: 1;
+        vertical-align: middle;
     }
 }
 .form-group {

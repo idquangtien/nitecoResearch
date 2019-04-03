@@ -1,6 +1,9 @@
 %btn {
+    border: none;
+    background-color: transparent;
     display: inline-block;
     height: $form-height;
+    line-height: $form-height;
     text-align: center;
     padding: 0 10px;
     font-size: $body-font-size;
@@ -10,8 +13,30 @@
         cursor: pointer;
     }
 }
+@mixin btn($color){
+    background-color: $color;
+    color: text-contract($color);
+    transition: .3s;
+    &:hover {
+        @if(lightness($color) > 75) {
+            background-color: darken($color, 5%);
+        } @else {
+            background-color: lighten($color, 5%);
+        }
+    }
+}
 .btn {
     @extend %btn;
+    &.btn--default {
+        @include btn($default);
+    }
+    &.btn--primary {
+        @include btn($primary);
+    }
+}
+.btn-block {
+    display: block;
+    width: 100%;
 }
 .btn-group {
     display: inline-flex;
