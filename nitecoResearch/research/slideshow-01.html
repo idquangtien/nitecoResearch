@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slideshow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .slideshow {
+            position: relative;
+            width: 768px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .slideshow ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            
+        }
+        .slideshow ul li {
+            position: relative;
+            float: left;
+            height: 100%;
+            transition: .5s;
+            
+        }
+        .slideshow ul li .slide__image {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slideshow ul li .slide__image img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .slideshow ul li .slide__content {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .slideshow .slideNext,
+        .slideshow .slidePrev {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .5s;
+        }
+        .slideshow .slideNext:hover,
+        .slideshow .slidePrev:hover {
+            cursor: pointer;
+            background-color: rgba(0,0,0,.5);
+        }
+        .slideshow .slidePrev {
+            left: 0;
+        }
+        .slideshow .slideNext {
+            right: 0;
+        }
+       
+        .slideshow .slidesControl {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .slideshow .slidesControl a {
+            display: block;
+            width: 50px;
+            height: 5px;
+            background-color: rgba(0,0,0,.1);
+            margin-left: 2px;
+            transition: .5s;
+        }
+        .slideshow .slidesControl a.active {
+            background-color: rgba(0,0,0,.5);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slideshow">
+        <ul class="slides">
+            <li class="slide">
+                <figure class="slide__image">
+                    <picture class="picture">
+                        <img src="assets/images/products/lg/productDetail001.jpg"/>
+                    </picture>
+                    <figcaption></figcaption>
+                </figure>
+                <div class="slide__content">
+                    <div class="slide__info">
+                        <div class="slide__title">slide 01</div>
+                        <div class="slide__desc">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </li>
+            <li class="slide">
+                <figure class="slide__image">
+                    <picture class="picture">
+                            <img src="assets/images/products/lg/productDetail002.jpg"/>
+                    </picture>
+                    <figcaption></figcaption>
+                </figure>
+                <div class="slide__content">
+                    <div class="slide__info">
+                        <div class="slide__title">slide 01</div>
+                        <div class="slide__desc">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </li>
+            <li class="slide">
+                <figure class="slide__image">
+                    <picture class="picture">
+                        <img src="assets/images/products/lg/productDetail001.jpg"/>
+                    </picture>
+                    <figcaption></figcaption>
+                </figure>
+                <div class="slide__content">
+                    <div class="slide__info">
+                        <div class="slide__title">slide 01</div>
+                        <div class="slide__desc">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </li>
+            <li class="slide">
+                <figure class="slide__image">
+                    <picture class="picture">
+                            <img src="assets/images/products/lg/productDetail002.jpg"/>
+                    </picture>
+                    <figcaption></figcaption>
+                </figure>
+                <div class="slide__content">
+                    <div class="slide__info">
+                        <div class="slide__title">slide 01</div>
+                        <div class="slide__desc">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </li>
+            <li class="slide">
+                <figure class="slide__image">
+                    <picture class="picture">
+                        <img src="assets/images/products/lg/productDetail001.jpg"/>
+                    </picture>
+                    <figcaption></figcaption>
+                </figure>
+                <div class="slide__content">
+                    <div class="slide__info">
+                        <div class="slide__title">slide 01</div>
+                        <div class="slide__desc">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </li>
+            <li class="slide">
+                <figure class="slide__image">
+                    <picture class="picture">
+                            <img src="assets/images/products/lg/productDetail002.jpg"/>
+                    </picture>
+                    <figcaption></figcaption>
+                </figure>
+                <div class="slide__content">
+                    <div class="slide__info">
+                        <div class="slide__title">slide 01</div>
+                        <div class="slide__desc">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <a class="slidePrev">Prev</a>
+        <a class="slideNext">Next</a>
+        <nav class="slidesControl">
+           <a></a>
+           <a></a>
+           <a></a>
+           <a></a>
+           <a></a>
+           <a></a>
+        </nav>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        class Slideshow {
+            constructor(props){
+                this.slideshow = props.slideshow;
+                this.btnNext = props.btnNext;
+                this.btnPrev = props.btnPrev;
+            }
+            slideMove(currentSlide, slideWidth){
+                let self = this;
+                this.slideshow.find("ul").animate({
+                    'margin-left': "-"+ currentSlide * slideWidth + "px"
+                },1000, function(){
+                    self.slideshow.find('ul li').siblings().removeClass("active");
+                    $(self.slideshow.find('ul li')[currentSlide]).removeClass("active");
+                });
+            }
+            slideNext(currentSlide, totalSlide){
+                if(currentSlide < totalSlide - 1) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0;
+                }
+                return currentSlide;
+            }
+            slidePrev(currentSlide, totalSlide) {
+                if(currentSlide > 0) {
+                    currentSlide--;
+                } else {
+                    currentSlide = totalSlide - 1;
+                }
+                return currentSlide;
+            }
+            init() {
+                let self = this;
+                let currentSlide = 0;
+                let totalSlide = this.slideshow.find('.slide').length;
+                let slideWidth = this.slideshow.find('.slide').outerWidth();
+                let container = this.slideshow.outerWidth();
+                let lis = this.slideshow.find('li');
+
+                let slidesControlItem = this.slideshow.find(".slidesControl a");
+                let slidesControlTotal = slidesControlItem.length;
+
+                
+
+                this.slideshow.find("ul").width(container * totalSlide);
+                lis.width(container);
+
+                $(slidesControlItem[0]).addClass("active");
+
+
+                this.btnNext.click(function(){
+                    currentSlide = self.slideNext(currentSlide, totalSlide);
+                    self.slideMove(currentSlide, slideWidth);
+                });
+
+                this.btnPrev.click(function(){
+                    currentSlide = self.slidePrev(currentSlide, totalSlide);
+                    self.slideMove(currentSlide, slideWidth);
+
+                    slidesControlItem.siblings().removeClass("active");
+                    $(slidesControlItem[currentSlide]).addClass("active");
+                });
+
+                setInterval(function(){
+                    if(currentSlide < totalSlide - 1) {
+                        currentSlide++;
+                    } else {
+                        currentSlide = 0;
+                    }
+                    self.slideMove(currentSlide, slideWidth);
+
+                    slidesControlItem.siblings().removeClass("active");
+                    $(slidesControlItem[currentSlide]).addClass("active");
+                }, 3000);
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            var slideshow = new Slideshow({
+                slideshow: $('.slideshow'),
+                btnNext: $('.slideNext'),
+                btnPrev: $('.slidePrev'),
+
+            });
+            slideshow.init();
+        });
+    </script>
+</body>
+</html>

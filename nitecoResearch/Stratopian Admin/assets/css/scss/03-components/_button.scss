@@ -1,0 +1,31 @@
+%btn {
+    display: inline-block;
+    height: $form-height;
+    text-align: center;
+    padding: 0 10px;
+    font-size: $body-font-size;
+    white-space: nowrap;
+    &:hover, &:focus {
+        outline: none;
+        cursor: pointer;
+    }
+}
+.btn {
+    @extend %btn;
+}
+.btn.btn-only-icon {
+    width: $form-height;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-group {
+    display: inline-flex;
+    .icon {
+        background-color: rgba(black,.1);
+        padding: 0 10px;
+    }
+    .btn {
+        padding: 0 10px;
+    }
+}

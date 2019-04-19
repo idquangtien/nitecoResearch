@@ -1,0 +1,9 @@
+.alert {
+    display: block;
+    padding: 20px;
+    animation: flat 2s; 
+    &--danger {
+        background-color: rgba(red, .1);
+        color: rgba(red,.8);
+    }
+}
