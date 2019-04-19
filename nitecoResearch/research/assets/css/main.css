@@ -16,15 +16,15 @@
 }
 
 .btn.btn--default {
-  background-color: #888;
-  color: white;
+  background-color: #e9ecef;
+  color: black;
   -webkit-transition: .3s;
   -o-transition: .3s;
   transition: .3s;
 }
 
 .btn.btn--default:hover {
-  background-color: #959595;
+  background-color: #dadfe4;
 }
 
 .btn.btn--primary {
@@ -260,6 +260,46 @@ ul.breadcrumb li:last-child a:hover {
   height: 100%;
   display: block;
   background-color: rgba(255, 0, 0, 0.1);
+}
+
+.loading {
+  text-align: center;
+  -webkit-animation: flat 2s;
+  animation: flat 2s;
+}
+
+.loading img {
+  width: 100px;
+}
+
+@-webkit-keyframes flat {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flat {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.alert {
+  display: block;
+  padding: 20px;
+  -webkit-animation: flat 2s;
+  animation: flat 2s;
+}
+
+.alert--danger {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: rgba(255, 0, 0, 0.8);
 }
 
 .modal {

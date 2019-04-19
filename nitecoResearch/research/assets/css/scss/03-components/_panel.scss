@@ -1,0 +1,18 @@
+details.panel {
+    summary.panel__header {
+        &::-webkit-details-marker {
+            display: none;
+        }
+        &:after {
+            content: "+";
+        }
+
+    }
+}
+details.panel[open] {
+    summary.panel__header {
+        &:after {
+            content: "-";
+        }
+    }
+}

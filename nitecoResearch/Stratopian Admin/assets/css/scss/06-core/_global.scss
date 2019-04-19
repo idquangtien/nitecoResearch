@@ -1,0 +1,33 @@
+.container {
+    max-width: $container;
+    width: 100%;
+    margin: 0 auto;
+    &--fluid {
+        max-width: initial;
+    }
+}
+
+.truncateText {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    -moz-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+@for $i from 1 through 100 {
+    .width-#{$i * 5} { width: $i * 5px; }
+    .height-#{$i * 5} { height: $i * 5px; }
+
+    .max-width-#{$i * 5} { max-width: $i * 5px; }
+    .max-height-#{$i * 5} { max-height: $i * 5px; }
+
+    .min-width-#{$i * 5} { min-width: $i * 5px; }
+    .min-height-#{$i * 5} { min-height: $i * 5px; }
+}

@@ -1,29 +1,47 @@
 // ===================================================
 // COLORS
 // ===================================================
-$primary: 	#bb974e;//#59a3fc;
+$primary: 	#23b7e5;
+$secondary: #fff;
+$light: 	#f8f9fa;
+$dark: 		#3a3f51;
 $accent: 	#ff0040;
-$default: 	#e9ecef;
 $text: 		#222;
 
-$info: 		lightblue;
-$success: 	lightgreen;
-$warning: 	gold;
-$danger: 	tomato;
+$primary-gradient-1: #23b7e5;
+$primary-gradient-2: #51c6ea;
+
+$info: 		#23b7e5;
+$success: 	#27c24c;
+$warning: 	#ff902b;
+$danger: 	#f05050;
 
 
 $colors: (
-	'primary': 	$primary,
-	'accent': 	$accent,
-	'text': 	$text,
-	'info': 	$info,
-	'success': 	$success,
-	'warning': 	$warning,
-	'danger': 	$danger
+	'primary': 			$primary,
+	'accent': 			$accent,
+	'text': 			$text,
+	'info': 			$info,
+	'success': 			$success,
+	'warning': 			$warning,
+	'danger': 			$danger,
+
+	'secondary': 		$secondary,
+    'light': 			$light,
+    'dark': 			$dark,
+
+    
 );
 // ===================================================
 // BREAKPOINTS
 // ===================================================
+
+    // --breakpoint-xs: 0;
+    // --breakpoint-sm: 576px;
+    // --breakpoint-md: 768px;
+    // --breakpoint-lg: 992px;
+    // --breakpoint-xl: 1200px;
+
 // MOBILE
 $sm: 767px;
 // TABLET
@@ -51,10 +69,22 @@ $body-text: #5d5d5d;
 // ===================================================
 // HEADER
 // ===================================================
-$header-height: 80px;
+$header-height: 60px;
 $header-bg: $primary;
+$header-color: white;
 $header-border: #ddd;
 $header-z-index: 2;
+
+// ===================================================
+// PAGE
+// ===================================================
+$page-border: #cfdbe2;
+
+$page-header-bg: #fafbfc;
+$page-header-color: #929292;
+$page-header-height: 40px;
+$page-header-border: #cfdbe2;
+
 // ===================================================
 // SIDEBAR
 // ===================================================
@@ -67,9 +97,11 @@ $sidebar-z-index: 3;
 // ===================================================
 // FORM
 // ===================================================
-$form-height: 40px;
-$form-border: #ced4da;
-$form-disable: #e9ecef;
+$form-height: 30px;
+$form-bg: white;
+$form-border: #dde6e9;
+$form-focus: #66afe9;
+$form-placeholder: #b7bac9;
 $font-bg: transparent;
 // ===================================================
 // ICON

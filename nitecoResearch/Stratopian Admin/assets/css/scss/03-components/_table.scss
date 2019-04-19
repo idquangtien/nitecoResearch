@@ -1,0 +1,68 @@
+.table {
+	width: 100%;
+
+	border-collapse: collapse;
+	background-color: white;
+	
+	thead {
+		tr {
+			border-bottom: 2px solid #f4f4f4;
+			th {
+				padding: 10px;
+				border: 1px solid #f4f4f4;
+				
+				
+				&.sort {
+					position: relative;
+					padding-right: 30px;
+
+					&:after {
+						content: "\e64b";
+						font-family: themify;
+						font-size: 10px;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						right: 10px;
+						color: rgba(black,0.3);
+						display: inline-flex;
+						justify-content: center;
+						align-items: center;
+					}
+					&.sort-down, &.sort-up {
+						&:after {
+							color: black;
+						}
+					}
+					&.sort-up {
+						&:after {
+							content: "\e648";
+						}
+					}
+					&:hover {
+						cursor: pointer;
+						&:after {
+							color: $info;
+						}
+					}
+				}
+			}
+		}
+	}
+	tbody {
+		
+		tr {
+			td {
+				padding: 5px 10px;
+				border: 1px solid #f4f4f4;
+				vertical-align: baseline;
+				&.cell-action {
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
+.table-container {
+	overflow: auto;
+}

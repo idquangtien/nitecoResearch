@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Progress Bar</title>
+    <style>
+        @keyframes progressbar {
+            from { transform: scaleX(0); transform-origin: 0 0 0; }
+            to { transform: scaleX(1); transform-origin: 0 0 0; }
+        } 
+        .progressbar {
+            display: block;
+            width: 100%;
+            height: 10px;
+            background-color: silver;
+            transition-timing-function: ease-in-out;
+        }
+        .progressValue {
+            background-color: #f00;
+            display: block;
+            height: 100%;
+            transition: width 1s;
+            animation: progressbar 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="progressbar">
+        <div id="progressValue" class="progressValue" style="width: 20%;"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event){
+            document.getElementById("progressValue").style.width = "90%";
+        });
+    </script>
+</body>
+</html>

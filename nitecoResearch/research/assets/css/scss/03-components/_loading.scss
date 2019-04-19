@@ -1,0 +1,12 @@
+.loading {
+    text-align: center;
+    animation: flat 2s; 
+    img {
+        width: 100px;
+    }
+}
+
+@keyframes flat {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

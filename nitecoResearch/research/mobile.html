@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            max-width: 375px;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #eee;
+        }
+        .header {
+            background-color: #aaa;
+            height: 50px;
+            display: flex;
+        }
+        .menu, .account {
+            flex: 1;
+        }
+        .logo {
+            width: 100px;
+            background-color: #555;
+        }
+        nav {
+          
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style-type: none; 
+        }
+        li {
+            flex: 1;
+        }
+        a {
+            display: block;
+            padding: 10px;
+            background-color: #ff9800; 
+            text-decoration: none;
+        }
+        nav li ul {
+            display: none;
+        }
+        nav li:hover ul, 
+        li:focus-within ul {
+            display: initial;
+        }
+        a:focus {
+            background-color: black;
+            color: white;
+        }
+
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: silver;
+        }
+        picture {
+            flex: 1;
+        }
+        picture img {
+            width: 100px;
+        }
+        .post {
+            flex: 9999;
+            min-width: 100px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="menu"></div>
+            <div class="logo"></div>
+            <div class="account"></div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Projects</a>
+                    <ul>
+                        <li><a href="#1">Project 1</a></li>
+                        <li><a href="#2">Project 2</a></li>
+                        <li><a href="#3">Project 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                    <ul>
+                        <li><a href="#1">Category 1</a></li>
+                        <li><a href="#2">Category 2</a></li>
+                        <li><a href="#3">Category 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                    <ul>
+                        <li><a href="#1">About 1</a></li>
+                        <li><a href="#2">About 2</a></li>
+                        <li><a href="#3">About 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <main>
+           <article>
+               <picture>
+                   <img src="assets/images/products/md/product003.jpg"/>
+               </picture>
+               <div class="post">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus voluptatem laboriosam soluta incidunt ipsum velit vel debitis odit doloribus suscipit! Ea, dignissimos voluptates! Necessitatibus dolorem laudantium id sapiente facilis repudiandae!</div>
+           </article>
+        </main>
+    </div>
+</body>
+</html>
